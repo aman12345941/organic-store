@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 95 47% 96%;
+    --foreground: 200 24% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 24% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 24% 18%;
+
+    --primary: 123 38% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 95 30% 90%;
+    --secondary-foreground: 123 38% 25%;
+
+    --muted: 95 20% 92%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 200 24% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 95 20% 85%;
+    --input: 95 20% 85%;
+    --ring: 123 38% 33%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(123 38% 33%), hsl(123 50% 42%));
+    --card-shadow: 0 4px 20px -4px hsl(123 38% 33% / 0.1);
+    --card-hover-shadow: 0 8px 30px -4px hsl(123 38% 33% / 0.18);
+
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .dark {
+    --background: 200 24% 10%;
+    --foreground: 95 30% 95%;
+    --card: 200 20% 14%;
+    --card-foreground: 95 30% 95%;
+    --popover: 200 20% 14%;
+    --popover-foreground: 95 30% 95%;
+    --primary: 123 45% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 15% 20%;
+    --secondary-foreground: 95 30% 90%;
+    --muted: 200 15% 18%;
+    --muted-foreground: 200 10% 60%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 200 24% 10%;
+    --border: 200 15% 22%;
+    --input: 200 15% 22%;
+    --ring: 123 45% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--hero-gradient);
+  }
+  .shadow-card {
+    box-shadow: var(--card-shadow);
+  }
+  .shadow-card-hover {
+    box-shadow: var(--card-hover-shadow);
+  }
+}
